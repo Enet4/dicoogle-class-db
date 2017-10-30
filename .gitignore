@@ -1,3 +1,7 @@
 /target/
 /.idea/
+/.settings/
+/.classpath
+/.project
+/.vscode/
 /class-db.iml
