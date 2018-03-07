@@ -1,5 +1,7 @@
 # Dicoogle Classification Database
 
+[![Build Status](https://travis-ci.org/Enet4/dicoogle-class-db.svg?branch=master)](https://travis-ci.org/Enet4/dicoogle-class-db)
+
 This plugin integrates a database for indexing and querying classification data
 with Dicoogle.
 
