@@ -100,11 +100,10 @@
             </snapshots>
         </repository>
 
-        <repository>
-            <id>sourceforge-releases</id>
-            <name>Sourceforge Releases</name>
-            <url>https://oss.sonatype.org/content/repositories/sourceforge-releases</url>
-        </repository>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
     </repositories>
 
     <dependencies>
@@ -114,9 +113,9 @@
             <version>${dicoogle.version}</version>
         </dependency>
         <dependency>
-            <groupId>pt.ua.dicoogle</groupId>
-            <artifactId>classification-api</artifactId>
-            <version>1.0.0</version>
+            <groupId>com.github.Enet4</groupId>
+            <artifactId>dicoogle-classification-api</artifactId>
+            <version>8ddbc80</version>
         </dependency>
         <dependency>
             <groupId>org.apache.lucene</groupId>

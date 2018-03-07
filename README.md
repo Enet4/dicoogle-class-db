@@ -5,10 +5,7 @@ with Dicoogle.
 
 ## Building
 
-This project depends on the
-[Dicoogle Classification API](https://github.com/Enet4/dicoogle-classification-api).
-First fetch and install the project there, so that Maven can resolve this dependency
-locally. Then, build this project:
+This is a Maven project.
 
 ```sh
 mvn install
