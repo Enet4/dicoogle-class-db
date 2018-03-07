@@ -52,6 +52,10 @@ public class ClassifyWebServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
+            if (!req.getRequestURI().startsWith("/classification/classify/")) {
+                sendError(resp, 404, "Not Found");
+                return;
+            }
             String requestURI = req.getRequestURI().substring("/classification/classify/".length());
             String[] resArr = requestURI.split("/");
 
@@ -73,7 +77,7 @@ public class ClassifyWebServlet extends HttpServlet {
             // use query provider as a classifier
             QueryInterface classifier = platform.getQueryProviderByName(classifierName, true);
             if (classifier == null) {
-                sendError(resp, 400, "No such classifier with the name " + classifierName);
+                sendError(resp, 400, String.format("No such classifier named `%s`", classifierName));
                 return;
             }
 
