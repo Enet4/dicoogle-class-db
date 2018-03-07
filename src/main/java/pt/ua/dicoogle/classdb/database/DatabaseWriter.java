@@ -18,12 +18,11 @@
  */
 package pt.ua.dicoogle.classdb.database;
 
-import pt.ua.dicoogle.classdb.database.struct.DatabaseItem;
-
 import java.io.Closeable;
 import java.io.IOException;
 import java.net.URI;
-import java.util.Map;
+
+import pt.ua.dicoogle.classdb.database.struct.DatabaseItem;
 
 /**
  * @author Eduardo Pinho <eduardopinho@ua.pt>

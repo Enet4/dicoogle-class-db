@@ -19,7 +19,6 @@
 package pt.ua.dicoogle.classdb;
 
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Objects;
 
 /**

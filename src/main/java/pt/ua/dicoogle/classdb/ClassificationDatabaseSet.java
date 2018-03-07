@@ -18,23 +18,29 @@
  */
 package pt.ua.dicoogle.classdb;
 
-import net.xeoh.plugins.base.annotations.PluginImplementation;
-import org.apache.commons.configuration.HierarchicalConfiguration;
-import org.restlet.resource.ServerResource;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import pt.ua.dicoogle.classdb.database.Database;
-import pt.ua.dicoogle.classdb.database.lucene.LuceneDatabase;
-import pt.ua.dicoogle.classdb.ws.WebServletPlugin;
-import pt.ua.dicoogle.sdk.*;
-import pt.ua.dicoogle.sdk.settings.ConfigurationHolder;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.NoSuchElementException;
+
+import org.apache.commons.configuration.HierarchicalConfiguration;
+import org.restlet.resource.ServerResource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import net.xeoh.plugins.base.annotations.PluginImplementation;
+import pt.ua.dicoogle.classdb.database.Database;
+import pt.ua.dicoogle.classdb.database.lucene.LuceneDatabase;
+import pt.ua.dicoogle.classdb.ws.WebServletPlugin;
+import pt.ua.dicoogle.sdk.GraphicalInterface;
+import pt.ua.dicoogle.sdk.IndexerInterface;
+import pt.ua.dicoogle.sdk.JettyPluginInterface;
+import pt.ua.dicoogle.sdk.PluginSet;
+import pt.ua.dicoogle.sdk.QueryInterface;
+import pt.ua.dicoogle.sdk.StorageInterface;
+import pt.ua.dicoogle.sdk.settings.ConfigurationHolder;
 
 /**
  * The main plugin set.

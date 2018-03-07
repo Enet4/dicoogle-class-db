@@ -18,22 +18,24 @@
  */
 package pt.ua.dicoogle.classdb.ws;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import pt.ua.dicoogle.sdk.QueryInterface;
-import pt.ua.dicoogle.sdk.core.DicooglePlatformInterface;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.StreamSupport;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import pt.ua.dicoogle.sdk.QueryInterface;
+import pt.ua.dicoogle.sdk.core.DicooglePlatformInterface;
 
 /**
  * @author Eduardo Pinho <eduardopinho@ua.pt>
@@ -59,19 +61,19 @@ public class ClassifyWebServlet extends HttpServlet {
                 classifierName = resArr[0];
                 criterion = resArr[1];
             } catch (ArrayIndexOutOfBoundsException ex) {
-                this.sendError(resp, 400, "Bad path to classifier/criterion");
+                sendError(resp, 400, "Bad path to classifier/criterion");
                 return;
             }
             String data = req.getParameter("uri");
             if (data == null) {
-                this.sendError(resp, 400, "Missing uri parameter");
+                sendError(resp, 400, "Missing uri parameter");
                 return;
             }
 
             // use query provider as a classifier
             QueryInterface classifier = platform.getQueryProviderByName(classifierName, true);
             if (classifier == null) {
-                this.sendError(resp, 400, "No such classifier with the name " + classifierName);
+                sendError(resp, 400, "No such classifier with the name " + classifierName);
                 return;
             }
 
@@ -97,7 +99,7 @@ public class ClassifyWebServlet extends HttpServlet {
 
         } catch (RuntimeException|JSONException ex) {
             logger.warn("Servlet failure", ex);
-            this.sendError(resp, 500, "Internal server failure");
+            sendError(resp, 500, "Internal server failure");
         }
     }
 

@@ -18,18 +18,19 @@
  */
 package pt.ua.dicoogle.classdb.ws;
 
+import javax.servlet.MultipartConfigElement;
+
 import org.eclipse.jetty.server.handler.HandlerList;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import pt.ua.dicoogle.classdb.database.Database;
 import pt.ua.dicoogle.sdk.JettyPluginInterface;
 import pt.ua.dicoogle.sdk.core.DicooglePlatformInterface;
 import pt.ua.dicoogle.sdk.core.PlatformCommunicatorInterface;
 import pt.ua.dicoogle.sdk.settings.ConfigurationHolder;
-
-import javax.servlet.MultipartConfigElement;
 
 /**
  * @author Eduardo Pinho <eduardopinho@ua.pt>

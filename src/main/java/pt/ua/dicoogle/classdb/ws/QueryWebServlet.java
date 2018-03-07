@@ -18,30 +18,24 @@
  */
 package pt.ua.dicoogle.classdb.ws;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import pt.ua.dicoogle.classdb.ClassificationDatabaseSet;
-import pt.ua.dicoogle.classdb.QueryProvider;
-import pt.ua.dicoogle.classdb.database.Database;
-import pt.ua.dicoogle.classdb.database.struct.DatabaseItem;
-import pt.ua.dicoogle.classdb.database.struct.QueryParametersBuilder;
-import pt.ua.dicoogle.sdk.QueryInterface;
-import pt.ua.dicoogle.sdk.core.DicooglePlatformInterface;
-import pt.ua.dicoogle.sdk.datastructs.SearchResult;
+import java.io.IOException;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.net.URI;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-import java.util.stream.StreamSupport;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import pt.ua.dicoogle.classdb.database.Database;
+import pt.ua.dicoogle.classdb.database.struct.DatabaseItem;
+import pt.ua.dicoogle.classdb.database.struct.QueryParametersBuilder;
+import pt.ua.dicoogle.sdk.core.DicooglePlatformInterface;
 
 /** A web servlet providing a service similar to Dicoogle search, tailored for this classification database.
  * @author Eduardo Pinho <eduardopinho@ua.pt>

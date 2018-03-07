@@ -18,17 +18,23 @@
  */
 package pt.ua.dicoogle.classdb;
 
+import java.io.IOException;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Spliterator;
+import java.util.Spliterators;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import pt.ua.dicoogle.classdb.database.Database;
 import pt.ua.dicoogle.classdb.database.struct.DatabaseItem;
 import pt.ua.dicoogle.classdb.database.struct.QueryParametersBuilder;
 import pt.ua.dicoogle.sdk.QueryInterface;
 import pt.ua.dicoogle.sdk.datastructs.SearchResult;
 import pt.ua.dicoogle.sdk.settings.ConfigurationHolder;
-
-import java.io.IOException;
-import java.util.*;
 
 /**
  *

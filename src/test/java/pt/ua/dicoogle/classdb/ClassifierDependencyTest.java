@@ -18,16 +18,14 @@
  */
 package pt.ua.dicoogle.classdb;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import org.junit.Test;
 
 /**
  * @author Eduardo Pinho <eduardopinho@ua.pt>
@@ -57,7 +55,7 @@ public class ClassifierDependencyTest {
         );
 
         assertEquals(expected,
-                ClassificationIndexer.sortByDependencies(new ArrayList(list)));
+                ClassificationIndexer.sortByDependencies(new ArrayList<>(list)));
     }
 
     @Test
@@ -70,7 +68,7 @@ public class ClassifierDependencyTest {
         );
 
         assertEquals(expected,
-                ClassificationIndexer.sortByDependencies(new ArrayList(list)));
+                ClassificationIndexer.sortByDependencies(new ArrayList<>(list)));
     }
 
     @Test
@@ -83,7 +81,7 @@ public class ClassifierDependencyTest {
         );
 
         assertEquals(expected,
-                ClassificationIndexer.sortByDependencies(new ArrayList(list)));
+                ClassificationIndexer.sortByDependencies(new ArrayList<>(list)));
     }
 
     @Test
@@ -96,7 +94,7 @@ public class ClassifierDependencyTest {
         );
 
         assertEquals(expected,
-                ClassificationIndexer.sortByDependencies(new ArrayList(list)));
+                ClassificationIndexer.sortByDependencies(new ArrayList<>(list)));
     }
 
     @Test
@@ -104,7 +102,7 @@ public class ClassifierDependencyTest {
         final List<ClassificationEndpointDescriptor> list = Arrays.asList(
                 desc5, desc6
         );
-        Object out = ClassificationIndexer.sortByDependencies(new ArrayList(list));
+        Object out = ClassificationIndexer.sortByDependencies(new ArrayList<>(list));
         assertNull("Cyclic dependency!", out);
     }
 
@@ -113,7 +111,7 @@ public class ClassifierDependencyTest {
         final List<ClassificationEndpointDescriptor> list = Arrays.asList(
                 desc5, desc1, desc6
         );
-        Object out = ClassificationIndexer.sortByDependencies(new ArrayList(list));
+        Object out = ClassificationIndexer.sortByDependencies(new ArrayList<>(list));
         assertNull("Cyclic dependency!", out);
     }
 }

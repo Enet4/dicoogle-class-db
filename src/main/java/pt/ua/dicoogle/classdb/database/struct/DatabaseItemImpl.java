@@ -18,13 +18,8 @@
  */
 package pt.ua.dicoogle.classdb.database.struct;
 
-import org.apache.commons.lang3.tuple.Pair;
-import pt.ua.dicoogle.classification.api.PredictionIdentifier;
-
 import java.net.URI;
-import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.Objects;
 
 /**
  *

@@ -18,12 +18,11 @@
  */
 package pt.ua.dicoogle.classdb.database;
 
-import pt.ua.dicoogle.classdb.database.struct.DatabaseItem;
-import pt.ua.dicoogle.classdb.database.struct.QueryParameters;
-
-import java.io.Closeable;
 import java.io.IOException;
 import java.util.stream.Stream;
+
+import pt.ua.dicoogle.classdb.database.struct.DatabaseItem;
+import pt.ua.dicoogle.classdb.database.struct.QueryParameters;
 
 /**
  * @author Eduardo Pinho <eduardopinho@ua.pt>
