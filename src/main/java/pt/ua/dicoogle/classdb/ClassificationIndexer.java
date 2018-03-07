@@ -86,7 +86,7 @@ public class ClassificationIndexer implements IndexerInterface, PlatformCommunic
         final URI uri = storage.getURI();
         logger.info("Classifying and indexing {} ...", uri);
 
-        final Map<String, SearchResult> dict = new HashMap<>();
+        final Map<URI, SearchResult> dict = new HashMap<>();
         return this.classifierEndpoints.stream().sequential()
                 // flatten all predictions
                 .flatMap(p -> {
@@ -99,8 +99,7 @@ public class ClassificationIndexer implements IndexerInterface, PlatformCommunic
                     for (SearchResult rs: qint.query(p.getCriterion(), uri, dict)) {
                         res.add(rs);
                         URI predUri = rs.getURI();
-                        PredictionIdentifier id = PredictionIdentifier.decompose(predUri);
-                        dict.put(id.getClassifierName(), rs);
+                        dict.put(predUri, rs);
                     }
                     return res.stream();
                 })
