@@ -23,7 +23,9 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -84,6 +86,7 @@ public class ClassificationIndexer implements IndexerInterface, PlatformCommunic
         final URI uri = storage.getURI();
         logger.info("Classifying and indexing {} ...", uri);
 
+        final Map<String, SearchResult> dict = new HashMap<>();
         return this.classifierEndpoints.stream().sequential()
                 // flatten all predictions
                 .flatMap(p -> {
@@ -92,7 +95,14 @@ public class ClassificationIndexer implements IndexerInterface, PlatformCommunic
                         logger.warn("No such classifier {}, providing no predictions");
                         return Stream.empty();
                     }
-                    return ((Collection<SearchResult>) qint.query(p.getCriterion(), uri)).stream();
+                    Collection<SearchResult> res = new ArrayList<>();
+                    for (SearchResult rs: qint.query(p.getCriterion(), uri, dict)) {
+                        res.add(rs);
+                        URI predUri = rs.getURI();
+                        PredictionIdentifier id = PredictionIdentifier.decompose(predUri);
+                        dict.put(id.getClassifierName(), rs);
+                    }
+                    return res.stream();
                 })
                 // ignore invalid output
                 .filter(sr -> sr.getScore() >= 0 && sr.getScore() <= 1)
