@@ -1,0 +1,17 @@
+language: java
+dist: trusty
+sudo: false
+
+before_cache:
+ - rm -rf $HOME/.m2/repository/pt/ua/ieeta/dicoogle*
+
+cache:
+  directories:
+    - $HOME/.m2
+
+matrix:
+  include:
+    - jdk: oraclejdk8
+    - jdk: openjdk8
+  allow_failures:
+    - jdk: oraclejdk9

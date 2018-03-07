@@ -18,7 +18,7 @@ The plugin jar "class-db-1.0.0-plugin.jar" will be in the target folder.
 A configuration is required for the classification database to work. Specify as many
 `classifier` elements as there are classifiers and as many `criterion` elements as
 desired. Criteria can also include a variable number of criteria that the specific
-classification method depends on, often used for conditional classification.
+classification method _depends on_, often used for conditional classification.
 The `index-path` element is optional and is used for specifying the classification
 index' directory path. These classifiers are expected to be compliant with the
 [Dicoogle Classification API](https://github.com/Enet4/dicoogle-classification-api).
