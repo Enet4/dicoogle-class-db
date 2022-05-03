@@ -1,6 +1,6 @@
 # Dicoogle Classification Database
 
-[![Build Status](https://travis-ci.org/Enet4/dicoogle-class-db.svg?branch=master)](https://travis-ci.org/Enet4/dicoogle-class-db)
+[![Java CI with Maven](https://github.com/Enet4/dicoogle-class-db/actions/workflows/maven.yml/badge.svg)](https://github.com/Enet4/dicoogle-class-db/actions/workflows/maven.yml)
 
 This plugin integrates a database for indexing and querying classification data
 with Dicoogle.
